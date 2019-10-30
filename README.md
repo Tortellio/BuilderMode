@@ -2,10 +2,8 @@
 BuilderMode plugin gives player ability to enter builder mode
 
 ### Features
-- Enter builder mode
-- Hide/Edit server plugins
-- Hide/Edit server workshop mods
-- Hide/Edit server configs
+- Enter/Exit builder mode or freecam mode
+- Has separated permission for each mode
 
 ### Commands
 **/builder** - Enter/Exit builder mode
