@@ -38,9 +38,9 @@ namespace Tortellio.BuilderMode
             }
             else
             {
-                if (caller.HasPermission("builder.freecam")) { caller.Player.look.sendFreecamAllowed(true); UnturnedChat.Say(Instance.Translate("has_freecam")); }
-                if (caller.HasPermission("builder.builder")) { caller.Player.look.sendWorkzoneAllowed(true); UnturnedChat.Say(Instance.Translate("has_builder")); }
-                if (caller.HasPermission("builder.name")) { caller.Player.look.sendSpecStatsAllowed(true); UnturnedChat.Say(Instance.Translate("has_name")); }
+                if (caller.HasPermission("builder.freecam")) { caller.Player.look.sendFreecamAllowed(true); UnturnedChat.Say(caller, Instance.Translate("has_freecam")); }
+                if (caller.HasPermission("builder.builder")) { caller.Player.look.sendWorkzoneAllowed(true); UnturnedChat.Say(caller, Instance.Translate("has_builder")); }
+                if (caller.HasPermission("builder.name")) { caller.Player.look.sendSpecStatsAllowed(true); UnturnedChat.Say(caller, Instance.Translate("has_name")); }
                 if (Configuration.Instance.EnableServerAnnouncer) UnturnedChat.Say(Instance.Translate("b_on_message", caller.CharacterName), UnturnedChat.GetColorFromName(Configuration.Instance.MessageColor, Color.yellow));
             }
         }

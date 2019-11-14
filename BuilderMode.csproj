@@ -69,7 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builder.cs" />
+    <Compile Include="BuilderMode.cs" />
     <Compile Include="Commands\CommandBuilder.cs" />
     <Compile Include="Commands\CommandCheckBuilder.cs" />
     <Compile Include="Config.cs" />
