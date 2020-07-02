@@ -20,10 +20,15 @@ namespace Tortellio.BuilderMode.Commands
                 UnturnedChat.Say(caller, BuilderMode.Instance.Translate("cb_usage"));
                 return;
             }
-            else if (command.Length > 0)
+            else if (command.Length == 1)
             {
                 UnturnedPlayer cplayer = UnturnedPlayer.FromName(command[0]);
                 BuilderMode.Instance.CheckBuilder(cplayer, caller);
+            }
+            else
+            {
+                UnturnedChat.Say(caller, BuilderMode.Instance.Translate("cb_usage"));
+                return;
             }
         }
     }

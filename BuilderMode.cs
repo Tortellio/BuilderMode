@@ -13,7 +13,7 @@ namespace Tortellio.BuilderMode
     {
         public static BuilderMode Instance;
         public static string PluginName = "BuilderMode";
-        public static string PluginVersion = " 1.0.0";
+        public static string PluginVersion = " 1.0.1";
         protected override void Load()
         {
             Instance = this;
@@ -49,14 +49,7 @@ namespace Tortellio.BuilderMode
             UnturnedPlayer player = (UnturnedPlayer)caller;
             if (cplayer != null && (cplayer.Player.look.canUseWorkzone || cplayer.Player.look.canUseFreecam || cplayer.Player.look.canUseSpecStats))
             {
-                if (caller is ConsolePlayer)
-                {
-                    UnturnedChat.Say(Instance.Translate("cb_on_message", "Console", cplayer.DisplayName));
-                }
-                else if (player is UnturnedPlayer)
-                {
-                    UnturnedChat.Say(Instance.Translate("cb_on_message", caller.DisplayName, cplayer.DisplayName));
-                }
+                UnturnedChat.Say(Instance.Translate("cb_on_message", caller is ConsolePlayer ? "Console" : caller.DisplayName, cplayer.DisplayName));
                 return;
             }
             else if (cplayer == null)
@@ -68,16 +61,16 @@ namespace Tortellio.BuilderMode
 
         public override TranslationList DefaultTranslations => new TranslationList()
         {
-            { "has_freecam", "Free Camera enabled!" },
-            { "has_builder", "Builder enabled!" },
-            { "has_name", "Player Names enabled!" },
-            { "no_permission", "You do not have the correct permissions to use /builder" },
             { "b_on_message", "{0} entered builder mode." },
             { "b_off_message", "{0} exit builder mode." },
             { "cb_on_message", "{0} has confirmed that {1} has builder role." },
             { "cb_off_message", "{0} has confirmed that {1} doesn't have builder role." },
             { "cb_not_found", "Player is not online or invalid." },
-            { "cb_usage", "No argument was specified. Please use \"cb <playername>\" to check on a player." }
+            { "cb_usage", "No argument was specified. Please use \"cb <playername>\" to check on a player." },
+            { "has_freecam", "Free Camera enabled!" },
+            { "has_builder", "Builder enabled!" },
+            { "has_name", "Player Names enabled!" },
+            { "no_permission", "You do not have the correct permissions to use /builder!" },
         };
     }
 }
